@@ -178,8 +178,10 @@
   .article h3 { font-size: 20px; margin-top: 6px; }
   .article .body { margin-top: 12px; color: var(--ink-soft); font-size: 16px; }
   .article .body p + p { margin-top: 8px; }
-  .compare { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15px; }
-  .compare th, .compare td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; line-height: 1.55; }
+  .articles > *, .cards3 > *, .apply-grid > *, .about-grid > * { min-width: 0; }
+  .compare { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15px; table-layout: fixed; }
+  .compare th, .compare td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; line-height: 1.55; overflow-wrap: anywhere; }
+  .compare tr > :first-child { width: 28%; }
   .compare th { background: var(--bg-soft); color: var(--navy-deep); font-weight: 600; }
   .links { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
   .links .lbl { font-size: 14px; color: var(--ink-faint); margin-bottom: 8px; }
@@ -282,7 +284,15 @@
       background: rgba(250, 248, 243, 0.97); border-top: 1px solid var(--line);
       box-shadow: 0 -8px 24px -16px rgba(22, 43, 71, 0.35);
     }
-    .mbar .btn { min-height: 52px; padding: 0 10px; }
+    .mbar .btn { min-height: 52px; padding: 0 8px; gap: 6px; white-space: nowrap; min-width: 0; }
+  }
+  @media (max-width: 360px) {
+    .wrap { padding: 0 12px; }
+    .mbar { padding-left: 8px; padding-right: 8px; gap: 6px; }
+    .mbar .btn { font-size: 15.5px; }
+    .mbar .btn svg { width: 18px; height: 18px; }
+    .compare { font-size: 14px; }
+    .compare th, .compare td { padding: 6px 7px; }
   }
 </style>
 </head>
