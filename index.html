@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보험 점검 상담</title>
+<meta name="description" content="내 보험을 이해하고, 필요한 보장을 함께 점검합니다. 가입 보험 점검 · 가족 보장 상담 · 보험금 청구 절차 안내 · 법인 보험 컨설팅 · 고용보험·정책자금 상담">
+<link rel="icon" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<!-- 카카오톡·문자로 주소를 공유할 때 보이는 미리보기 -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hobakbeol369.github.io/onpoom/">
+<meta property="og:title" content="이정숙 | 보험 점검 상담 · CEO 온품">
+<meta property="og:description" content="내 보험을 이해하고, 필요한 보장을 함께 점검합니다. 개인 · 가족 · 법인 보험 상담">
+<meta property="og:image" content="https://hobakbeol369.github.io/onpoom/images/og-image.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #FAF8F3;
+    --bg-soft: #F3EFE6;
+    --surface: #FFFFFF;
+    --ink: #1E2530;
+    --ink-soft: #4A5361;
+    --ink-faint: #7A818C;
+    --line: #E5DFD3;
+    --navy: #1F3A5F;
+    --navy-deep: #162B47;
+    --navy-tint: #E8EDF4;
+    --green: #2F5D50;
+    --green-tint: #E6EFEB;
+    --kakao: #FEE500;
+    --kakao-ink: #191600;
+    --radius: 16px;
+    --wrap: 1080px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--navy); }
+  h1, h2, h3 { line-height: 1.35; margin: 0; color: var(--navy-deep); letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+  section { padding: 88px 0; }
+  section.alt { background: var(--bg-soft); }
+  .eyebrow { font-size: 15px; font-weight: 600; color: var(--green); letter-spacing: 0.02em; margin-bottom: 10px; }
+  .sec-title { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; }
+  .sec-lead { margin-top: 14px; color: var(--ink-soft); max-width: 640px; }
+
+  /* 버튼 */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 52px; padding: 0 24px; border-radius: 12px;
+    font: inherit; font-size: 17px; font-weight: 600; text-decoration: none;
+    border: 1.5px solid transparent; cursor: pointer; transition: background .15s, transform .15s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-deep); }
+  .btn-kakao { background: var(--kakao); color: var(--kakao-ink); }
+  .btn-kakao:hover { filter: brightness(0.97); }
+  .btn-line { background: transparent; color: var(--navy); border-color: var(--navy); }
+  .btn-line:hover { background: var(--navy-tint); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* 섹션 끝 문의 */
+  .sec-cta {
+    margin-top: 48px; padding: 24px 28px; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .sec-cta p { font-weight: 600; color: var(--ink); }
+  .sec-cta p small { display: block; font-weight: 400; color: var(--ink-soft); font-size: 15px; }
+
+  /* 헤더 */
+  header.top {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(250, 248, 243, 0.94); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { font-weight: 700; color: var(--navy-deep); text-decoration: none; font-size: 17px; white-space: nowrap; }
+  .brand .sub { color: var(--ink-faint); font-weight: 500; margin-left: 6px; font-size: 14px; }
+  nav.menu { display: flex; gap: 22px; }
+  nav.menu a { color: var(--ink-soft); text-decoration: none; font-size: 15px; font-weight: 500; }
+  nav.menu a:hover { color: var(--navy); }
+  header .btn { min-height: 40px; padding: 0 16px; font-size: 15px; border-radius: 10px; }
+
+  /* 첫 화면 */
+  .hero { padding: 56px 0 88px; }
+  .hero .wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px;
+    grid-template-areas: "head banner" "body banner"; align-content: center;
+  }
+  .hero-head { grid-area: head; align-self: end; }
+  .hero-body { grid-area: body; }
+  .banner {
+    grid-area: banner; align-self: center; margin: 0; border-radius: 24px; overflow: hidden;
+    aspect-ratio: 1 / 1; background: var(--navy-tint);
+    box-shadow: 0 24px 48px -28px rgba(22, 43, 71, 0.45);
+  }
+  .banner img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 700; }
+  .hero h1 em { font-style: normal; color: var(--green); }
+  .hero .lead { font-size: 19px; color: var(--ink-soft); padding-top: 20px; }
+  .hero .btn-row { margin-top: 28px; }
+  .promise { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px 20px; padding: 0; list-style: none; color: var(--ink-soft); font-size: 15px; }
+  .promise li { display: flex; align-items: center; gap: 6px; }
+  .promise li::before { content: ""; width: 18px; height: 18px; flex: none; border-radius: 50%; background: var(--green-tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%232F5D50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; }
+
+  .photo {
+    position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 5;
+    background: var(--navy-tint); box-shadow: 0 24px 48px -28px rgba(22, 43, 71, 0.45);
+  }
+  /* 원본 사진 오른쪽 아래 표시가 잘리도록 가운데 기준 세로 크롭 */
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+  .photo .ph { position: absolute; inset: 0; display: none; place-items: center; text-align: center; color: var(--navy); font-size: 15px; padding: 24px; }
+  .photo.missing img { display: none; }
+  .photo.missing .ph { display: grid; }
+
+  /* 소개 */
+  .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; margin-top: 40px; }
+  .about-grid .photo { aspect-ratio: 4 / 5; }
+  .facts { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .facts li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .facts li[hidden] { display: none; }
+  .facts .k { color: var(--ink-faint); font-size: 15px; padding-top: 1px; }
+  .facts .v { color: var(--ink); }
+  .facts .v a { font-size: 15px; margin-left: 4px; }
+  .principles { margin-top: 32px; display: grid; gap: 14px; }
+  .principle { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: grid; grid-template-columns: 36px 1fr; gap: 14px; }
+  .principle .n { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+  .principle h3 { font-size: 18px; }
+  .principle p { color: var(--ink-soft); font-size: 16px; margin-top: 4px; }
+
+  /* 상담 분야 */
+  .cards3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+  .topic {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; display: flex; flex-direction: column; gap: 12px;
+  }
+  .topic .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--green-tint); display: grid; place-items: center; }
+  .topic .icon svg { width: 26px; height: 26px; stroke: var(--green); }
+  .topic .worry { color: var(--green); font-weight: 600; font-size: 16px; }
+  .topic h3 { font-size: 21px; }
+  .topic ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 16px; }
+  .topic .btn { margin-top: auto; width: 100%; }
+  .topic.wide { grid-column: 1 / -1; }
+  .topic.wide .btn { max-width: 360px; }
+  .topic .note { font-size: 14px; color: var(--ink-faint); line-height: 1.6; }
+  .topic .links { margin-top: 0; }
+
+  /* 상담 과정 */
+  .steps { list-style: none; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; position: relative; }
+  .step::before { counter-increment: s; content: "0" counter(s); display: block; font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; margin-bottom: 8px; }
+  .step h3 { font-size: 19px; }
+  .step p { color: var(--ink-soft); font-size: 15.5px; margin-top: 6px; line-height: 1.65; }
+  .step .time { display: inline-block; margin-top: 12px; font-size: 13.5px; color: var(--navy); background: var(--navy-tint); border-radius: 999px; padding: 2px 10px; }
+
+  /* 보험 정보 */
+  .articles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+  .article { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; }
+  .article .tag { font-size: 13.5px; font-weight: 600; color: var(--green); }
+  .article h3 { font-size: 20px; margin-top: 6px; }
+  .article .body { margin-top: 12px; color: var(--ink-soft); font-size: 16px; }
+  .article .body p + p { margin-top: 8px; }
+  .compare { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15px; }
+  .compare th, .compare td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; line-height: 1.55; }
+  .compare th { background: var(--bg-soft); color: var(--navy-deep); font-weight: 600; }
+  .links { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+  .links .lbl { font-size: 14px; color: var(--ink-faint); margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; text-decoration: none; color: var(--navy); background: var(--navy-tint); border-radius: 999px; padding: 5px 12px; }
+  .chip:hover { background: #dbe3ee; }
+  .chip.public { color: var(--green); background: var(--green-tint); }
+  .chip::after { content: "↗"; font-size: 12px; }
+  .article .ask { margin-top: 18px; font-size: 15.5px; font-weight: 600; background: none; border: 0; padding: 0; color: var(--navy); cursor: pointer; text-align: left; font-family: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* FAQ */
+  .faq { margin-top: 40px; display: grid; gap: 12px; max-width: 820px; }
+  .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  .faq summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 22px; font-weight: 600; font-size: 18px; color: var(--navy-deep); position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 24px; font-weight: 400; color: var(--navy); }
+  .faq details[open] summary::after { content: "−"; }
+  .faq .a { padding: 0 22px 22px; color: var(--ink-soft); font-size: 16.5px; }
+  .faq .a ul { margin: 8px 0 0; padding-left: 20px; }
+
+  /* 상담 신청 */
+  .apply-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; margin-top: 40px; align-items: start; }
+  .contact-direct { display: grid; gap: 12px; }
+  .contact-direct .btn { width: 100%; justify-content: flex-start; padding: 0 20px; }
+  .contact-direct .hours { color: var(--ink-soft); font-size: 15px; margin-top: 8px; }
+  .reassure { margin-top: 24px; background: var(--green-tint); border-radius: var(--radius); padding: 20px 22px; color: var(--green); font-size: 16px; }
+  .reassure strong { display: block; margin-bottom: 4px; }
+  form.apply { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: grid; gap: 18px; }
+  .field label { display: block; font-weight: 600; font-size: 16px; margin-bottom: 6px; }
+  .field label .opt { font-weight: 400; color: var(--ink-faint); font-size: 14px; }
+  .field input, .field select, .field textarea {
+    width: 100%; font: inherit; font-size: 17px; color: var(--ink);
+    border: 1.5px solid var(--line); border-radius: 10px; background: #fff; padding: 12px 14px; min-height: 50px;
+  }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px var(--navy-tint); }
+  .times { display: flex; flex-wrap: wrap; gap: 8px; }
+  .times label { position: relative; margin: 0; font-weight: 500; font-size: 15.5px; }
+  .times input { position: absolute; opacity: 0; pointer-events: none; }
+  .times span { display: inline-block; border: 1.5px solid var(--line); border-radius: 999px; padding: 8px 16px; cursor: pointer; background: #fff; }
+  .times input:checked + span { border-color: var(--navy); background: var(--navy); color: #fff; }
+  .times input:focus-visible + span { box-shadow: 0 0 0 3px var(--navy-tint); }
+  .consent { font-size: 14.5px; color: var(--ink-soft); background: var(--bg); border-radius: 10px; padding: 14px 16px; line-height: 1.6; }
+  .consent label { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; color: var(--ink); font-size: 15.5px; margin-top: 8px; cursor: pointer; }
+  .privacy { display: grid; grid-template-columns: 104px 1fr; gap: 6px 12px; margin: 10px 0; }
+  .privacy dt { font-weight: 600; color: var(--ink); }
+  .privacy dd { margin: 0; }
+  @media (max-width: 640px) { .privacy { grid-template-columns: 1fr; gap: 0; } .privacy dd { margin-bottom: 8px; } }
+  .consent input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--navy); }
+  .form-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .form-actions .btn { width: 100%; }
+  .form-note { font-size: 14px; color: var(--ink-faint); }
+  .err { color: #A23B2A; font-size: 14.5px; min-height: 0; }
+
+  /* 푸터 */
+  footer { background: var(--navy-deep); color: #C9D2DE; padding: 48px 0 120px; font-size: 14.5px; line-height: 1.7; }
+  footer strong { color: #fff; }
+  footer .notice { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); display: grid; gap: 4px; }
+  footer a { color: #fff; }
+
+  /* 모바일 하단 고정 바 */
+  .mbar { display: none; }
+
+  /* 토스트 */
+  .toast {
+    position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+    background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 12px; font-size: 15px; z-index: 50;
+    transition: opacity .2s, transform .2s; max-width: calc(100% - 32px); text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 900px) {
+    nav.menu { display: none; }
+    .hero { padding: 20px 0 64px; }
+    .hero .wrap { grid-template-columns: 1fr; grid-template-areas: "banner" "head" "body"; }
+    .banner { width: 100%; max-width: 520px; margin: 0 auto 32px; }
+    .hero .lead { padding-top: 18px; }
+    .cards3 { grid-template-columns: 1fr; }
+    .about-grid, .apply-grid { grid-template-columns: 1fr; gap: 32px; }
+    .about-grid .photo { max-width: 320px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .articles { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 16px; }
+    section { padding: 64px 0; }
+    .hero .btn-row .btn { flex: 1 1 100%; }
+    .steps { grid-template-columns: 1fr; }
+    .facts li { grid-template-columns: 1fr; gap: 2px; }
+    .sec-cta { padding: 20px; }
+    .sec-cta .btn { width: 100%; }
+    .form-actions { grid-template-columns: 1fr; }
+    form.apply { padding: 22px 18px; }
+    header .btn { display: none; }
+    .mbar {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(250, 248, 243, 0.97); border-top: 1px solid var(--line);
+      box-shadow: 0 -8px 24px -16px rgba(22, 43, 71, 0.35);
+    }
+    .mbar .btn { min-height: 52px; padding: 0 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span data-cfg="name"></span><span class="sub">보험 점검 상담</span></a>
+    <nav class="menu" aria-label="메뉴">
+      <a href="#about">소개</a>
+      <a href="#topics">상담 분야</a>
+      <a href="#process">상담 과정</a>
+      <a href="#info">보험 정보</a>
+      <a href="#faq">자주 묻는 질문</a>
+    </nav>
+    <a class="btn btn-primary" href="#apply">상담 예약</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. 첫 화면 -->
+  <section class="hero">
+    <div class="wrap">
+      <figure class="banner">
+        <img src="images/main-banner.webp" width="1254" height="1254" alt="CEO 온품 — 온기품은 컨설턴트. 기업의 내일과 가족의 일상을 함께 지킵니다. 법인·개인 보험 컨설팅">
+      </figure>
+      <div class="hero-head">
+        <p class="eyebrow">개인 · 가족 · 법인 보험 상담</p>
+        <h1>내 보험을 이해하고,<br><em>필요한 보장</em>을 함께 점검합니다.</h1>
+      </div>
+      <div class="hero-body">
+        <p class="lead">매달 보험료는 나가는데 무엇이 보장되는지 잘 모르겠다면, 지금 가입한 보험부터 같이 펼쳐 보세요. 새 상품을 권하기 전에 기존 계약을 먼저 살핍니다.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#apply">상담 예약하기</a>
+          <a class="btn btn-kakao" data-action="kakao" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.5c-5 0-9 3.1-9 7 0 2.5 1.7 4.7 4.2 6l-.9 3.4c-.1.3.3.6.6.4l4-2.6c.4 0 .7.1 1.1.1 5 0 9-3.1 9-7s-4-7.3-9-7.3z"/></svg>
+            카카오톡 문의
+          </a>
+        </div>
+        <ul class="promise">
+          <li>상담 비용 없음</li>
+          <li>가입 권유 없이 점검만 가능</li>
+          <li>방문 · 전화 · 화상 상담</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 소개 -->
+  <section id="about" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">상담사 소개</p>
+      <h2 class="sec-title">보험을 파는 사람보다,<br>보험을 설명해 주는 사람이 되겠습니다.</h2>
+      <div class="about-grid">
+        <div>
+          <figure class="photo" style="margin:0">
+            <img data-photo src="images/profile.webp" alt="보험 상담사 프로필 사진">
+            <div class="ph">프로필 사진 자리</div>
+          </figure>
+        </div>
+        <div>
+          <ul class="facts">
+            <li><span class="k">이름</span><span class="v" data-cfg="name"></span></li>
+            <li><span class="k">소속</span><span class="v"><span data-cfg="agency"></span> <small style="color:var(--ink-faint)">(여러 보험회사 상품을 취급하는 법인보험대리점)</small><br>(협회 등록번호 <span data-cfg="agencyRegNo"></span>)</span></li>
+            <li><span class="k">설계사 등록번호</span><span class="v"><span data-cfg="regNo"></span> <a data-link="eclean" target="_blank" rel="noopener">직접 조회하기 ↗</a></span></li>
+            <li><span class="k">경력</span><span class="v" data-list="career"></span></li>
+            <li><span class="k">자격</span><span class="v" data-list="licenses"></span></li>
+          </ul>
+
+          <div class="principles">
+            <div class="principle"><span class="n">1</span><div><h3>기존 계약을 먼저 살핍니다</h3><p>새 상품 이야기보다 지금 가진 보험의 보장 내용과 보험료부터 확인합니다. 바꾸지 않아도 되는 계약은 그대로 두시라고 말씀드립니다.</p></div></div>
+            <div class="principle"><span class="n">2</span><div><h3>장점과 단점을 함께 설명합니다</h3><p>어떤 상품이든 좋은 점만 있지는 않습니다. 보험료, 갱신 여부, 보장 제외 조건까지 같이 보고 판단하실 수 있게 돕습니다.</p></div></div>
+            <div class="principle"><span class="n">3</span><div><h3>결정은 고객님이 하십니다</h3><p>점검 결과는 쉬운 말로 정리해 드리고, 그 자리에서 결정을 재촉하지 않습니다. 충분히 생각하신 뒤 연락 주셔도 됩니다.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-cta">
+        <p>어떤 사람인지 먼저 이야기 나눠 보고 싶다면<small>부담 없이 카카오톡으로 인사부터 하셔도 됩니다.</small></p>
+        <a class="btn btn-primary" href="#apply">상담 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 상담 분야 -->
+  <section id="topics">
+    <div class="wrap">
+      <p class="eyebrow">상담 분야</p>
+      <h2 class="sec-title">지금 어떤 고민이 있으신가요?</h2>
+      <p class="sec-lead">가장 가까운 고민을 고르시면, 그 주제로 바로 상담을 신청할 수 있어요.</p>
+      <div class="cards3">
+        <article class="topic">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <p class="worry">“보험이 여러 개인데 뭐가 뭔지 모르겠어요”</p>
+          <h3>가입 보험 점검</h3>
+          <ul>
+            <li>가입한 보험 목록과 보장 한눈에 정리</li>
+            <li>중복되거나 비어 있는 보장 확인</li>
+            <li>갱신형 여부와 갱신 조건 확인</li>
+          </ul>
+          <button class="btn btn-line" data-topic="가입 보험 점검">이 주제로 상담 신청</button>
+        </article>
+        <article class="topic">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M13.5 20c.2-2.3 1.6-4 3.5-4s3.3 1.7 3.5 4"/></svg></span>
+          <p class="worry">“가족 보험, 이 정도면 충분한 걸까요?”</p>
+          <h3>가족 보장 상담</h3>
+          <ul>
+            <li>부부·자녀·부모님 보장 함께 보기</li>
+            <li>가계 형편에 맞는 보험료 수준 점검</li>
+            <li>태아·어린이 보험 준비</li>
+          </ul>
+          <button class="btn btn-line" data-topic="가족 보장 상담">이 주제로 상담 신청</button>
+        </article>
+        <article class="topic">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h5"/></svg></span>
+          <p class="worry">“병원에 다녀왔는데 보험금을 받을 수 있나요?”</p>
+          <h3>보험금 청구 절차 안내</h3>
+          <ul>
+            <li>약관상 보장 대상에 해당하는지 함께 확인</li>
+            <li>필요 서류와 청구 방법 안내</li>
+            <li>아직 청구하지 않은 지난 진료 점검</li>
+          </ul>
+          <button class="btn btn-line" data-topic="보험금 청구 절차 안내">이 주제로 상담 신청</button>
+        </article>
+        <article class="topic">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-2v18"/><path d="M12 9h8v12"/><path d="M3 21h18"/><path d="M7 8h2M7 12h2M7 16h2M15 13h2M15 17h2"/></svg></span>
+          <p class="worry">“회사 보험, 무엇부터 챙겨야 할지 막막해요”</p>
+          <h3>법인 보험 컨설팅</h3>
+          <ul>
+            <li>회사가 가입한 보험 현황 정리와 점검</li>
+            <li>대표자·임직원 보장 준비 상담</li>
+            <li>법인 계약의 장단점과 유의할 점 안내</li>
+          </ul>
+          <button class="btn btn-line" data-topic="법인 보험 컨설팅">이 주제로 상담 신청</button>
+        </article>
+        <article class="topic wide">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.9-1.4-1.4-2.5-1.4-1.5 0-2.6.8-2.6 2s1.1 1.7 2.6 2c1.5.3 2.6.9 2.6 2.1s-1.1 2-2.6 2c-1.2 0-2.2-.5-2.6-1.4M12 6.5v1.3M12 16.2v1.3"/></svg></span>
+          <p class="worry">“우리 회사도 받을 수 있는 지원 제도가 있을까요?”</p>
+          <h3>고용보험 · 정책자금 상담</h3>
+          <ul>
+            <li>고용보험 가입 여부와 관련 고용 지원 제도 안내</li>
+            <li>고용 지원금 제도의 신청 요건 함께 확인</li>
+            <li>중소기업 정책자금 종류와 신청 절차 안내</li>
+          </ul>
+          <p class="note">※ 지원 대상 여부와 승인은 각 운영기관의 심사로 결정되며, 상담이 승인을 보장하지 않습니다. 신고·신청 대리가 필요한 업무는 공인노무사 등 전문가 확인을 권해 드립니다.</p>
+          <div class="links" data-links="biz"></div>
+          <button class="btn btn-line" data-topic="고용보험 · 정책자금 상담">이 주제로 상담 신청</button>
+        </article>
+      </div>
+      <div class="sec-cta">
+        <p>딱 맞는 주제가 없어도 괜찮아요<small>궁금한 점을 그대로 적어 보내 주시면 됩니다.</small></p>
+        <a class="btn btn-primary" href="#apply">상담 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 상담 과정 -->
+  <section id="process" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">상담 과정</p>
+      <h2 class="sec-title">신청하시면 이렇게 진행됩니다</h2>
+      <p class="sec-lead">처음부터 끝까지 비용은 들지 않고, 중간에 언제든 멈추셔도 됩니다.</p>
+      <ol class="steps">
+        <li class="step"><h3>문의</h3><p>카카오톡이나 문자로 이름과 궁금한 점을 남겨 주세요.</p><span class="time">1분</span></li>
+        <li class="step"><h3>상담 일정 조율</h3><p>편한 시간과 방식(방문·전화·화상)을 함께 정합니다.</p><span class="time">당일~1일 내 연락</span></li>
+        <li class="step"><h3>보장 내용 확인</h3><p>가입한 보험의 보장, 보험료, 갱신 조건을 하나씩 살펴봅니다.</p><span class="time">약 40~60분</span></li>
+        <li class="step"><h3>결과 설명</h3><p>유지할 것, 확인할 것, 보완할 것을 쉬운 말로 정리해 드립니다.</p><span class="time">정리 자료 제공</span></li>
+      </ol>
+      <div class="sec-cta">
+        <p>첫 단계는 문의 한 번이면 됩니다<small>준비할 자료가 없어도 시작할 수 있어요.</small></p>
+        <a class="btn btn-primary" href="#apply">상담 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 보험 정보 -->
+  <section id="info">
+    <div class="wrap">
+      <p class="eyebrow">알아두면 좋은 보험 정보</p>
+      <h2 class="sec-title">어려운 보험, 짧게 정리했어요</h2>
+      <p class="sec-lead">글 아래 링크로 공식 비교·조회 서비스를 직접 확인하실 수 있습니다.</p>
+      <div class="articles">
+
+        <article class="article">
+          <span class="tag">보험료</span>
+          <h3>갱신형과 비갱신형, 무엇이 다른가요?</h3>
+          <div class="body">
+            <p><b>갱신형</b>은 정해진 기간(예: 10년)이 지나면 그때의 나이와 위험률 등을 반영해 보험료를 다시 계산합니다. 갱신 시 보험료는 오를 수도, 내릴 수도 있어 미리 정확히 알기 어렵습니다.</p>
+            <p><b>비갱신형</b>은 약관에 정한 납입 기간 동안 보험료가 바뀌지 않는 방식입니다.</p>
+            <p>같은 보장을 비교하면 가입 시점 보험료는 갱신형이 낮은 경우가 많지만, <b>상품·가입 나이·보장 내용·납입 기간에 따라 달라질 수 있습니다.</b></p>
+            <table class="compare">
+              <tr><th></th><th>갱신형</th><th>비갱신형</th></tr>
+              <tr><th>가입 시 보험료</th><td>상대적으로 낮은 경우가 많음</td><td>상대적으로 높은 경우가 많음</td></tr>
+              <tr><th>이후 보험료</th><td>갱신 때마다 다시 계산(변동 가능)</td><td>납입 기간 동안 변동 없음</td></tr>
+              <tr><th>함께 볼 점</th><td>갱신 주기·최대 갱신 나이</td><td>납입 기간·총 납입 보험료</td></tr>
+            </table>
+            <p style="margin-top:10px;font-size:14px;color:var(--ink-faint)">※ 일반적인 설명이며 상품과 가입 조건에 따라 다를 수 있습니다. 정확한 내용은 상품설명서와 약관을 확인하세요.</p>
+          </div>
+          <div class="links" data-links="renewal"></div>
+          <button class="ask" data-topic="가입 보험 점검">내 보험은 갱신형인지 확인해 보기 →</button>
+        </article>
+
+        <article class="article">
+          <span class="tag">실손보험</span>
+          <h3>실손보험, 두 개 있으면 두 번 받나요?</h3>
+          <div class="body">
+            <p>아닙니다. 실손보험은 실제로 쓴 병원비 안에서 보상하기 때문에, 여러 개에 가입해도 <b>나눠서 보상</b>받을 뿐 더 받지 않습니다.</p>
+            <p>회사 단체보험과 개인 실손이 겹쳐 있는 경우가 많아요. 겹친다면 보험료만 두 번 내고 있을 수 있으니 확인해 보세요.</p>
+          </div>
+          <div class="links" data-links="silson"></div>
+          <button class="ask" data-topic="가입 보험 점검">중복 가입 확인 요청하기 →</button>
+        </article>
+
+        <article class="article">
+          <span class="tag">보험금 청구</span>
+          <h3>보험금 청구, 기한이 있나요?</h3>
+          <div class="body">
+            <p>네. 보험금 청구권은 <b>3년</b> 동안 행사하지 않으면 시효로 소멸합니다(상법 제662조).</p>
+            <p>이 3년은 보통 보험사고가 생긴 때부터 계산하지만, 사고 발생을 객관적으로 알기 어려웠던 경우처럼 시작 시점이 달라지거나, 시효가 중단되는 등의 예외가 있을 수 있어 사안별로 확인이 필요합니다.</p>
+            <p><b>청구할 수 있다는 것과 보험금이 지급된다는 것은 다릅니다.</b> 지급 여부와 금액은 약관의 보장 범위·면책 조건과 보험회사 심사에 따라 결정됩니다. 미뤄 둔 진료가 있다면 기간이 지나기 전에 청구 대상인지 확인해 보세요.</p>
+          </div>
+          <div class="links" data-links="claim"></div>
+          <button class="ask" data-topic="보험금 청구 절차 안내">청구 대상인지 확인 상담 →</button>
+        </article>
+
+        <article class="article">
+          <span class="tag">계약 변경</span>
+          <h3>지금 보험을 해지하고 새로 들면 더 좋을까요?</h3>
+          <div class="body">
+            <p>꼭 그렇지는 않습니다. 새로 가입하면 나이가 올라 보험료가 비싸질 수 있고, 일정 기간 보장이 안 되거나 줄어드는 기간이 다시 시작될 수 있어요. 해지할 때 돌려받는 돈이 낸 보험료보다 적을 수도 있습니다.</p>
+            <p>그래서 바꾸기 전에 지금 계약에서 <b>지킬 것과 보완할 것</b>을 먼저 나눠 보는 게 좋습니다.</p>
+          </div>
+          <div class="links" data-links="switch"></div>
+          <button class="ask" data-topic="가입 보험 점검">바꾸기 전에 먼저 점검받기 →</button>
+        </article>
+
+      </div>
+      <div class="sec-cta">
+        <p>글을 읽고 내 경우가 궁금해졌다면<small>가입한 보험 기준으로 직접 확인해 드립니다.</small></p>
+        <a class="btn btn-primary" href="#apply">상담 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">자주 묻는 질문</p>
+      <h2 class="sec-title">상담 전에 많이 물어보세요</h2>
+      <div class="faq">
+        <details open>
+          <summary>상담 비용이 있나요?</summary>
+          <div class="a">없습니다. 보험 점검과 상담, 보험금 청구 절차 안내 모두 비용을 받지 않습니다. 점검만 받고 가입하지 않으셔도 괜찮습니다.</div>
+        </details>
+        <details>
+          <summary>직접 만나지 않고도 상담할 수 있나요?</summary>
+          <div class="a">네. 전화나 화상으로 상담할 수 있고, 원하시면 직접 만나 뵙는 것도 가능합니다. 증권이나 진료 서류 같은 자료는 문의 단계에서 보내지 마시고, 상담 일정을 정할 때 <span data-cfg="agency"></span>가 정한 제출 방법과 개인정보 처리 절차를 안내받으신 뒤 제출해 주세요.</div>
+        </details>
+        <details>
+          <summary>무엇을 준비하면 되나요?</summary>
+          <div class="a">아래 중 있는 것만 상담 때 보여 주시면 됩니다. 없으면 상담 중에 함께 조회해 드립니다.
+            <ul>
+              <li>가입한 보험 증권 또는 보험사 앱 화면</li>
+              <li>매달 빠져나가는 보험료 내역</li>
+              <li>보험금 청구 상담이라면 진료비 영수증·진단서</li>
+            </ul>
+            <p style="margin-top:10px">진단서·진료 기록 등 건강에 관한 정보는 법에서 정한 <b>민감정보</b>입니다. 별도 동의를 받은 뒤 회사가 정한 방법으로만 받으며, 문자나 카카오톡으로 미리 보내지 않으셔도 됩니다.</p>
+          </div>
+        </details>
+        <details>
+          <summary>상담하면 꼭 가입해야 하나요?</summary>
+          <div class="a">아닙니다. 지금 보험이 충분하다면 그렇다고 말씀드립니다. 필요한 보장이 있을 때만 여러 보험회사 상품을 비교해 장단점과 함께 안내합니다.</div>
+        </details>
+        <details>
+          <summary>고용보험·정책자금 상담을 받으면 지원을 받을 수 있나요?</summary>
+          <div class="a">상담에서는 회사 상황에 맞는 제도와 신청 요건, 절차를 함께 확인해 드립니다. 다만 지원 대상 여부와 승인은 고용노동부·중소벤처기업진흥공단 등 <b>각 운영기관의 심사로 결정</b>되므로 결과를 약속드릴 수는 없습니다. 상담 비용은 없으며, 승인을 보장한다며 수수료를 요구하는 제3자 개입에는 주의하세요.</div>
+        </details>
+        <details>
+          <summary>제 개인정보는 어떻게 쓰이나요?</summary>
+          <div class="a">상담 연락과 일정 조율에만 사용하고, 상담(컨설팅)이 끝나면 지체 없이 파기합니다. 수집 주체와 항목, 보유 기간은 아래 상담 신청서의 ‘개인정보 수집·이용 안내’에서 확인하실 수 있습니다. 이 홈페이지는 입력 내용을 따로 저장하지 않습니다.</div>
+        </details>
+      </div>
+      <div class="sec-cta">
+        <p>다른 궁금한 점이 있으신가요?<small>질문만 하셔도 됩니다. 편하게 물어보세요.</small></p>
+        <a class="btn btn-primary" href="#apply">상담 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 상담 신청 -->
+  <section id="apply">
+    <div class="wrap">
+      <p class="eyebrow">상담 신청</p>
+      <h2 class="sec-title">편한 방법으로 연락 주세요</h2>
+      <p class="sec-lead">아래 내용을 적고 버튼을 누르면 문자나 카카오톡으로 바로 보낼 수 있어요.</p>
+      <div class="apply-grid">
+        <div>
+          <div class="contact-direct">
+            <a class="btn btn-kakao" data-action="kakao" href="#">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.5c-5 0-9 3.1-9 7 0 2.5 1.7 4.7 4.2 6l-.9 3.4c-.1.3.3.6.6.4l4-2.6c.4 0 .7.1 1.1.1 5 0 9-3.1 9-7s-4-7.3-9-7.3z"/></svg>
+              카카오톡으로 바로 문의
+            </a>
+            <a class="btn btn-line" data-link="tel" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>
+              전화하기 <span data-cfg="phone" style="font-weight:500"></span>
+            </a>
+            <p class="hours" data-cfg="hours"></p>
+          </div>
+          <div class="reassure">
+            <strong>문의만 하셔도 괜찮습니다</strong>
+            상담 후 가입을 권하는 연락을 반복해서 드리지 않습니다. 원하지 않으시면 언제든 “그만”이라고 말씀해 주세요.
+          </div>
+        </div>
+
+        <form class="apply" id="applyForm" novalidate>
+          <div class="field">
+            <label for="f-name">이름</label>
+            <input id="f-name" name="name" autocomplete="name" placeholder="예: 김민지">
+          </div>
+          <div class="field">
+            <label for="f-phone">연락처</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000">
+          </div>
+          <div class="field">
+            <label for="f-topic">상담 주제</label>
+            <select id="f-topic" name="topic">
+              <option value="">선택해 주세요</option>
+              <option>가입 보험 점검</option>
+              <option>가족 보장 상담</option>
+              <option>보험금 청구 절차 안내</option>
+              <option>법인 보험 컨설팅</option>
+              <option>고용보험 · 정책자금 상담</option>
+              <option>기타 문의</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>희망 시간</label>
+            <div class="times">
+              <label><input type="radio" name="time" value="평일 오전 (10~12시)"><span>오전 10~12시</span></label>
+              <label><input type="radio" name="time" value="평일 오후 (13~15시)"><span>오후 1~3시</span></label>
+              <label><input type="radio" name="time" value="평일 오후 (15~18시)"><span>오후 3~6시</span></label>
+              <label><input type="radio" name="time" value="언제든 괜찮음"><span>언제든</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-memo">남기실 말씀 <span class="opt">(선택)</span></label>
+            <textarea id="f-memo" name="memo" placeholder="예: 실손보험이 두 개인 것 같아요"></textarea>
+            <p class="form-note" style="margin-top:6px">병명·진료 내용 같은 건강 정보는 적지 말아 주세요.</p>
+          </div>
+          <div class="consent">
+            <strong style="color:var(--ink)">개인정보 수집·이용 안내</strong>
+            <dl class="privacy">
+              <dt>수집·이용 주체</dt><dd><span data-cfg="agency"></span> (담당 보험설계사 <span data-cfg="name"></span>)</dd>
+              <dt>수집 항목</dt><dd>[필수] 이름, 연락처, 상담 주제 · [선택] 희망 시간, 남기실 말씀<br>※ 문자·카카오톡으로 보내실 경우 발신 전화번호 또는 카카오톡 프로필 정보가 함께 전달됩니다.</dd>
+              <dt>이용 목적</dt><dd>상담 신청 확인, 연락 및 상담 일정 조율</dd>
+              <dt>보유·이용 기간</dt><dd data-cfg="retention"></dd>
+              <dt>동의 거부권</dt><dd>동의하지 않으실 수 있습니다. 동의하지 않으시면 이 신청서로는 신청할 수 없지만, 전화로는 문의하실 수 있으며 그 밖의 불이익은 없습니다.</dd>
+            </dl>
+            <p>이 홈페이지는 입력 내용을 저장하지 않으며, 직접 보내시는 문자·카카오톡으로만 전달됩니다.</p>
+            <label><input type="checkbox" id="f-agree"> 위 내용을 확인했으며 개인정보 수집·이용에 동의합니다 (필수)</label>
+          </div>
+          <p class="err" id="formErr" role="alert"></p>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary" data-send="sms">문자로 보내기</button>
+            <button type="button" class="btn btn-kakao" data-send="kakao">카카오톡으로 보내기</button>
+          </div>
+          <p class="form-note">카카오톡으로 보내기를 누르면 내용이 복사되고 대화창이 열립니다. 붙여넣기만 하시면 돼요.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong data-cfg="name"></strong> · <span data-cfg="agency"></span> · 설계사 등록번호 <span data-cfg="regNo"></span></p>
+    <p>연락처 <span data-cfg="phone"></span></p>
+    <div class="notice">
+      <p>소속 <span data-cfg="agency"></span><br>(협회 등록번호 <span data-cfg="agencyRegNo"></span>)</p>
+      <p><span data-cfg="agency"></span>는 여러 보험회사와 위탁계약을 맺은 법인보험대리점으로, 보험계약 체결을 중개합니다.</p>
+      <p>보험계약 체결 전에 상품설명서와 약관을 반드시 읽어 보시기 바랍니다.</p>
+      <p>기존 보험계약을 해지하고 다른 보험계약을 체결하면 보험 인수가 거절되거나, 보험료가 오르거나, 보장 내용이 달라질 수 있습니다.</p>
+    </div>
+    <div class="notice">
+      <p>본 홈페이지는 광고심의기준을 준수하였으며, 유효기간은 <span data-cfg="adValidYears"></span>년 입니다.</p>
+      <p>준법감시인 심의필 제 <span data-cfg="adReviewNo" style="white-space:pre"></span>호(<span data-cfg="adPeriod"></span>)</p>
+      <p>상기 내용은 모집종사자의 개인적인 의견으로, 계약 체결에 따른 이익 또는 손실은 보험계약자 및 피보험자에게 귀속됩니다.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 휴대폰 하단 고정 버튼 -->
+<div class="mbar">
+  <a class="btn btn-primary" href="#apply">상담 예약</a>
+  <a class="btn btn-kakao" data-action="kakao" href="#">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.5c-5 0-9 3.1-9 7 0 2.5 1.7 4.7 4.2 6l-.9 3.4c-.1.3.3.6.6.4l4-2.6c.4 0 .7.1 1.1.1 5 0 9-3.1 9-7s-4-7.3-9-7.3z"/></svg>
+    카카오톡 문의
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ==========================================================
+   여기만 고치면 페이지 전체에 반영됩니다.
+   ========================================================== */
+const CONFIG = {
+  name: "이정숙",                      // 이름
+  title: "보험설계사",                  // 직함
+  agency: "(주)아너스금융서비스",        // 소속 GA 이름
+  regNo: "20100259050004",            // 설계사 등록번호 (e-클린보험서비스에서 조회 가능)
+  phone: "010-5382-1786",             // 전화번호
+  kakaoUrl: "https://pf.kakao.com/_uEpiX", // 카카오톡 채널 주소
+  hours: "상담 가능 시간: 평일 오전 10시 ~ 오후 6시",
+  career: [                           // 확인 가능한 경력 (한 줄씩)
+    "2010년 보험 영업 시작 · 경력 16년",
+  ],
+  licenses: [                         // 자격증 (비워 두면 '자격' 줄이 숨겨집니다)
+    "생명보험 · 손해보험 · 제3보험 · 변액보험 판매 자격",
+  ],
+  agencyRegNo: "2011038006",          // 소속 GA 협회 등록번호
+  // 광고 심의 정보 (심의필 받으면 채우기)
+  adValidYears: "2",                  // 유효기간(년)
+  adReviewNo: "2026-10-01",           // 준법감시인 심의필 번호
+  adPeriod: "2026.10.08~2028.10.07",  // 심의 유효 기간
+  // 개인정보 보유·이용 기간 (회사 개인정보 처리방침·법정 보관 의무 확인 후 기재)
+  retention: "상담(컨설팅)이 끝나면 지체 없이 파기합니다. 상담 후 보험계약을 체결하시는 경우의 개인정보는 계약 때 받는 별도 동의에 따라 처리됩니다.",
+
+  // 누구나 쓸 수 있는 공식 조회·비교 서비스
+  publicSites: {
+    damoa:   { name: "보험다모아 (상품 비교)",       url: "https://www.e-insmarket.or.kr/" },
+    find:    { name: "내보험찾아줌 (가입 보험 조회)", url: "https://cont.insure.or.kr/" },
+    silson24:{ name: "실손24 (실손 간편 청구)",      url: "https://www.silson24.or.kr/" },
+    life:    { name: "생명보험협회 공시실",           url: "https://pub.insure.or.kr/" },
+    nonlife: { name: "손해보험협회 공시실",           url: "https://kpub.knia.or.kr/" },
+    work24:  { name: "고용24 (고용보험·고용 지원금)", url: "https://www.work24.go.kr/" },
+    kosmes:  { name: "중소벤처기업진흥공단 (정책자금)", url: "https://www.kosmes.or.kr/" },
+    bizinfo: { name: "기업마당 (지원사업 공고)",      url: "https://www.bizinfo.go.kr/" },
+  },
+  eclean: "https://www.e-cleanins.or.kr/",
+  // 글마다 붙일 공식 사이트 링크 (publicSites 의 키 이름)
+  articleLinks: {
+    renewal: ["damoa", "nonlife"],
+    silson:  ["find", "damoa"],
+    claim:   ["silson24", "find"],
+    switch:  ["life", "nonlife"],
+    biz:     ["work24", "kosmes", "bizinfo"],
+  },
+};
+
+/* ---------- 아래는 수정하지 않아도 됩니다 ---------- */
+(function () {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const digits = CONFIG.phone.replace(/[^0-9]/g, "");
+
+  // 텍스트 채우기
+  $$("[data-cfg]").forEach(el => { el.textContent = CONFIG[el.dataset.cfg] ?? ""; });
+  $$("[data-list]").forEach(el => {
+    const items = CONFIG[el.dataset.list] || [];
+    if (!items.length) { el.closest("li").hidden = true; return; }
+    el.innerHTML = items.map(t => `<div>${t}</div>`).join("");
+  });
+  $$('[data-link="tel"]').forEach(a => a.href = "tel:" + digits);
+  $$('[data-link="eclean"]').forEach(a => a.href = CONFIG.eclean);
+  document.title = `${CONFIG.name} | 보험 점검 상담`;
+
+  // 사진 없을 때 자리표시
+  $$("img[data-photo]").forEach(img => {
+    const fig = img.closest(".photo");
+    const miss = () => fig.classList.add("missing");
+    if (img.complete && img.naturalWidth === 0) miss();
+    img.addEventListener("error", miss);
+  });
+
+  // 보험 정보 링크
+  $$("[data-links]").forEach(box => {
+    const keys = CONFIG.articleLinks[box.dataset.links] || [];
+    const pub = keys.map(k => CONFIG.publicSites[k]).filter(Boolean)
+      .map(o => `<a class="chip public" href="${o.url}" target="_blank" rel="noopener">${o.name}</a>`).join("");
+    if (pub) box.innerHTML = `<p class="lbl">공식 조회·안내 사이트</p><div class="chips">${pub}</div>`;
+  });
+
+  // 토스트
+  const toast = $("#toast");
+  let tt;
+  function say(msg) {
+    toast.textContent = msg; toast.classList.add("show");
+    clearTimeout(tt); tt = setTimeout(() => toast.classList.remove("show"), 3200);
+  }
+
+  // 카카오톡 열기
+  function openKakao() { window.open(CONFIG.kakaoUrl, "_blank", "noopener"); }
+  $$('[data-action="kakao"]').forEach(a => a.addEventListener("click", e => { e.preventDefault(); openKakao(); }));
+
+  // 상담 분야 → 주제 자동 선택
+  const topicSel = $("#f-topic");
+  $$("[data-topic]").forEach(b => b.addEventListener("click", () => {
+    topicSel.value = b.dataset.topic;
+    $("#apply").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => $("#f-name").focus({ preventScroll: true }), 500);
+    say(`‘${b.dataset.topic}’ 주제가 선택되었어요`);
+  }));
+
+  // 신청 메시지 만들기
+  const form = $("#applyForm");
+  const err = $("#formErr");
+  function buildMessage() {
+    const name = $("#f-name").value.trim();
+    const phone = $("#f-phone").value.trim();
+    const topic = topicSel.value;
+    const time = (form.querySelector('input[name="time"]:checked') || {}).value || "";
+    const memo = $("#f-memo").value.trim();
+    if (!name) return fail("이름을 적어 주세요.", $("#f-name"));
+    if (!/^[0-9\-\s]{9,}$/.test(phone)) return fail("연락받으실 전화번호를 적어 주세요.", $("#f-phone"));
+    if (!topic) return fail("상담 주제를 골라 주세요.", topicSel);
+    if (!$("#f-agree").checked) return fail("개인정보 수집·이용에 동의해 주세요.", $("#f-agree"));
+    err.textContent = "";
+    return [
+      "[보험 상담 신청]",
+      `이름: ${name}`,
+      `연락처: ${phone}`,
+      `상담 주제: ${topic}`,
+      `희망 시간: ${time || "상관없음"}`,
+      memo ? `남긴 말: ${memo}` : "",
+    ].filter(Boolean).join("\n");
+  }
+  function fail(msg, el) { err.textContent = msg; el.focus(); return null; }
+
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand("copy"); } catch {}
+      ta.remove(); return ok;
+    }
+  }
+
+  $$("[data-send]").forEach(b => b.addEventListener("click", async () => {
+    const msg = buildMessage();
+    if (!msg) return;
+    if (b.dataset.send === "sms") {
+      location.href = `sms:${digits}?&body=${encodeURIComponent(msg)}`;
+      say("문자 앱이 열리면 전송 버튼만 눌러 주세요.");
+    } else {
+      const ok = await copy(msg);
+      say(ok ? "내용이 복사되었어요. 카카오톡 대화창에 붙여넣기 해 주세요." : "카카오톡 창에 이름과 연락처를 남겨 주세요.");
+      setTimeout(openKakao, 400);
+    }
+  }));
+})();
+</script>
+</body>
+</html>
